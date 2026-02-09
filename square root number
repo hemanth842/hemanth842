@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: auto;
+            background-color: yellow;
+        }
+        input {
+            width: 200px;
+            height: 30px;
+        }
+        button {
+            height: 35px;
+            font-size: medium;
+            margin-right: 12px;
+        }
+        #result {
+            margin-top: 23px;
+            font-size: 20px;
+            color: brown;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Square Root Number</h1>
+    <input type="number" id="num" placeholder="Enter the number">
+    <button onclick="calculatenumber()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculatenumber() {
+            var num = document.getElementById("num").value;
+
+            if (num === "") {
+                document.getElementById("result").innerHTML = "Please enter a number.";
+            } else if (num < 0) {
+                document.getElementById("result").innerHTML = "Enter a positive number.";
+            } else {
+                var result = Math.sqrt(num);
+                if (isNaN(result)) {
+                    document.getElementById("result").innerHTML = "Enter a valid number.";
+                } else {
+                    document.getElementById("result").innerHTML = "The square root value is: " + result;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
